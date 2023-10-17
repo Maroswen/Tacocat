@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APP NAME: A Coding Challenge</title>
+    <title>Symmetry: A Coding Challenge</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -32,7 +32,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
                 <img src="/img/mainlogo.png" height="30" />
-                APP NAME
+                Symmetry
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -74,28 +74,58 @@
             <div class="col-12 col-lg-8">
                 <pre class="line-numbers">
                     <code class="language-js">
-function displayMessage() {
-    // get the text out of our <input> and assign it to a variable
-    let msg = document.getElementById('message').value;
-                        
-    Swal.fire(
-        {
+function getValues() {
+
+    let message = document.getElementById('userInput').value;
+    
+    if (message.length == 0) {
+        Swal.fire({
+            icon: 'error',
             backdrop: false,
-            title: 'APP NAME',
-            text: msg, // <-- replace this text with that variable
-        }
-    );
-                        
+            title: 'Oops!',
+            text: 'Please enter a message to see if its a palindrome'
+        });
+    } else {
+
+        let revMsg = checkForPalindrome(message);
+        
+        displayResults(revMsg);
+
+    }
+
+}
+
+function checkForPalindrome(str) { 
+    
+    var a = str.replace(/\s|[0-9_]|\W|[#$%^&*()]/g, "").toLowerCase();
+
+    if (a === a.split("").reverse().join("")) {
+        return true;
+    }
+        return false;
+}
+
+
+
+function displayResults(message) {
+
+    document.getElementById('msg').textContent = `Your message reflected is: ${message}`;
+
+    document.getElementById('alert').classList.remove('invisible');
 }
                     </code>
                 </pre>
             </div>
             <div class="col-12 col-lg-4">
                 <!-- Explain your code here -->
-                <p>The code is structured in one function</p>
-                <p>
-                    <code>displayMessage</code> displays a SweetAlert
-                    when the button is pressed.
+                <p>The code is structured in three functions.</p>
+                <p>The <code>getValues</code> function receives the words entered by the user. 
+                    If the user gives an invalid input, an alert will pop up on the screen.</p>
+                <p>The <code>checkForPalindrome</code> function takes the received words and checks 
+                to see if its a palindrome. It will also ignore Uppercase letters, and spaces between words. 
+                This is accomplished using RegEx.</p>
+                <p>Finally, the <code>displayResults</code> function displays a box, 
+                    informing the user if their input is a palindrome or not.
                 </p>
             </div>
         </div>

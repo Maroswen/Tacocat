@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APP NAME: A Coding Challenge</title>
+    <title>Symmetry: A Coding Challenge</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -29,7 +29,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html">
                 <img src="/img/mainlogo.png" height="30" />
-                APP NAME
+                Symmetry
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -66,12 +66,37 @@
     </nav>
 
     <main class="container py-3">
-        <h1>APP UI GOES HERE</h1>
-
-        <input class="form-control my-3" placeholder="Enter a message" type="text" style="width: 12rem" name="message"
-            id="message" />
-
-        <button id="btnSubmit" class="btn btn-primary">Display Message</button>
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col">
+                <h1 class="display-4 fw-bold">Symmetry</h1>
+                <h2 class="lead border-2 border-bottom pb-2">A Coding Challenge</h2>
+                <p>Symmetry is a Javascript exercise using arrays. The program will inform you if your message is a palindrome or not.</p>
+                <p>To begin, enter a message in the input box and press the button to see if your message is symmetrical.</p>
+            </div>
+            <div class="col">
+                <form action="#">
+                    <label class="form-label" for="userInput">Enter a Message to see if its symmetrical.</label>
+                    
+                    <input class="form-control" 
+                        type="text"
+                        name="userInput"
+                        placeholder="Enter a Message"
+                        id="userInput"/>
+                    
+                    <button class="my-3 btn btn-primary"
+                        id="btnSubmit"
+                        type="button">
+                        Symmetry!
+                    </button>
+                </form>
+                <div class="alert alert-success mt-3 invisible" id="alert" role="alert">
+                    <h2 class="fw-bold mt-2 pb-2">Results</h2>
+                    <p id="msg">
+                        <!-- Reflected message goes here -->
+                    </p>
+                </div>
+            </div>
+        </div>
     </main>
 
 
@@ -109,7 +134,7 @@
         let button = document.getElementById('btnSubmit');
 
         // tell the button to run our display message function when clicked
-        button.addEventListener('click', displayMessage);
+        button.addEventListener('click', getValues);
     </script>
 
 </body>

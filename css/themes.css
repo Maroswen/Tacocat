@@ -1,0 +1,32 @@
+.root {
+    --ma-green-core: #198754;
+    --ma-green-100: hsl(152, 38%, 95%);
+    --ma-green-150: hsl(152, 38%, 90%);
+    --ma-green-200: hsl(152, 38%, 85%);
+    --ma-green-300: hsl(152, 38%, 75%);
+    --ma-green-400: hsl(152, 38%, 65%);
+    --ma-green-500: hsl(152, 38%, 55%);
+    --ma-green-600: hsl(152, 38%, 45%);
+    --ma-green-700: hsl(152, 38%, 35%);
+    --ma-green-800: hsl(152, 38%, 25%);
+    --ma-green-850: hsl(152, 38%, 20%);
+    --ma-green-900: hsl(152, 38%, 15%);
+}
+
+
+
+
+[data-ma-theme="green"] {
+    --ma-theme-core: #198754;
+    --ma-theme-100: hsl(152, 38%, 95%);
+    --ma-theme-150: hsl(152, 38%, 90%);
+    --ma-theme-200: hsl(152, 38%, 85%);
+    --ma-theme-300: hsl(152, 38%, 75%);
+    --ma-theme-400: hsl(152, 38%, 65%);
+    --ma-theme-500: hsl(152, 38%, 55%);
+    --ma-theme-600: hsl(152, 38%, 45%);
+    --ma-theme-700: hsl(152, 38%, 35%);
+    --ma-theme-800: hsl(152, 38%, 25%);
+    --ma-theme-850: hsl(152, 38%, 20%);
+    --ma-theme-900: hsl(152, 38%, 15%);
+}
